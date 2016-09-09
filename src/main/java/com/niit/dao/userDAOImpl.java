@@ -20,13 +20,13 @@ public class userDAOImpl implements userDAO {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public void add(User user) {
+	/*public void add(User user) {
 		Session session=sessionFactory.getCurrentSession();
 		Transaction t=session.beginTransaction();
 		session.saveOrUpdate(user);
 		t.commit();
 		}
-
+*/
   public void delete( int id){
 	  Session session= sessionFactory.getCurrentSession();
 	  User deleteu=new User();
@@ -65,6 +65,13 @@ public class userDAOImpl implements userDAO {
 	  
 	  
   }
+  public void de( int id){
+	  Session session= sessionFactory.getCurrentSession();
+	  User deleteu=new User();
+	  deleteu.setId(id);
+	  Transaction t=session.beginTransaction();
+	  session.delete(deleteu);
+		t.commit();
 	  
 	  
   }
